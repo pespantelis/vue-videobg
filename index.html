@@ -2,11 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Video Background | Vue.js</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400|Dosis:300">
     <link rel="stylesheet" type="text/css" href="demo/assets/style.css">
   </head>
   <body>
-    <video-bg :sources="['demo/assets/timelapse.mp4']" img="demo/assets/bg.jpg"></video-bg>
+    <video-bg :sources="['demo/assets/timelapse.mp4']" img="demo/assets/bg.jpg">
+      <img src="demo/assets/logo.png" alt="Vue logo"/>
+      <h1>Video Background</h1>
+      <h4>Vue.js component</h4>
+      <a href="#" class="button">Source on GitHub</a>
+
+      <div id="social">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Video Background - A @vuejs component" data-via="pespantelis">Tweet</a>
+        <iframe src="https://ghbtns.com/github-btn.html?user=pespantelis&repo=vue-videobg&type=star&count=true" frameborder="0" scrolling="0" width="78px" height="20px"></iframe>
+      </div>
+    </video-bg>
+
     <script src="demo/build/build.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </body>
 </html>
