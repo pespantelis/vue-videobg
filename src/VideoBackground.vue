@@ -3,7 +3,9 @@
     <video autoplay loop muted v-el:video>
       <source v-for="source in sources" :src="source" :type="getMediaType(source)">
     </video>
-    <slot></slot>
+    <div class="VideoBg__content">
+      <slot></slot>
+    </div>
   </section>
 </template>
 
@@ -104,5 +106,13 @@
     left: 50%;
     visibility: hidden;
     transform: translate(-50%, -50%);
+  }
+
+  .VideoBg__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 </style>
