@@ -1,0 +1,7 @@
+.idea/
+.babelrc
+.editorconfig
+.npmignore
+demo/
+index.html
+webpack.config.js
