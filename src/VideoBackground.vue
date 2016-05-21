@@ -34,8 +34,9 @@
 
       if (this.videoCanPlay()) {
         this.$els.video.oncanplay = () => {
+          if (!this.$els.video) return
+
           this.videoRatio = this.$els.video.videoWidth / this.$els.video.videoHeight
-          console.log(this.videoRatio)
           this.setVideoSize()
           this.$els.video.style.visibility = 'visible'
         }
