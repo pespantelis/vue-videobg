@@ -1,6 +1,6 @@
 <template>
   <section class="VideoBg">
-    <video autoplay loop muted v-el:video>
+    <video autoplay loop muted ref="video">
       <source v-for="source in sources" :src="source" :type="getMediaType(source)">
     </video>
     <div class="VideoBg__content">
@@ -28,17 +28,17 @@
       }
     },
 
-    ready () {
+    mounted () {
       this.setImageUrl()
       this.setContainerHeight()
 
       if (this.videoCanPlay()) {
-        this.$els.video.oncanplay = () => {
-          if (!this.$els.video) return
+        this.$refs.video.oncanplay = () => {
+          if (!this.$refs.video) return
 
-          this.videoRatio = this.$els.video.videoWidth / this.$els.video.videoHeight
+          this.videoRatio = this.$refs.video.videoWidth / this.$refs.video.videoHeight
           this.setVideoSize()
-          this.$els.video.style.visibility = 'visible'
+          this.$refs.video.style.visibility = 'visible'
         }
       }
 
@@ -59,7 +59,7 @@
       },
 
       videoCanPlay () {
-        return !!this.$els.video.canPlayType
+        return !!this.$refs.video.canPlayType
       },
 
       setImageUrl () {
@@ -81,8 +81,8 @@
           height = this.$el.offsetHeight
         }
 
-        this.$els.video.style.width = width ? `${width}px` : 'auto'
-        this.$els.video.style.height = height ? `${height}px` : 'auto'
+        this.$refs.video.style.width = width ? `${width}px` : 'auto'
+        this.$refs.video.style.height = height ? `${height}px` : 'auto'
       },
 
       getMediaType (src) {
