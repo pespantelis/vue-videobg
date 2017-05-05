@@ -1,7 +1,7 @@
-import Vue from 'vue'
+import Vue from 'vue/dist/vue.common'
 import VideoBg from '../src/VideoBackground.vue'
 
 new Vue({
-  el: 'body',
+  el: '#demo',
   components: { VideoBg }
 })
